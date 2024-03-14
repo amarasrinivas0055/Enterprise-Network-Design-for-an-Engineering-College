@@ -1,11 +1,12 @@
 Enterprise Network Design for an Engineering College
+====================================================
 
 The network infrastructure for the engineering college is designed to provide reliable connectivity and security across its four main blocks: Engineering Branches, Labs, Administrative, and 
 Server Room.
 
 
 Engineering Branches Block:-
-============================
+---------------------------
 
 This block accommodates five engineering branches, each with 60 students:
 
@@ -13,7 +14,7 @@ This block accommodates five engineering branches, each with 60 students:
 
 
 Labs Block:-
-=============
+------------
 
 This block houses five specialized labs, each with a capacity for 60 host devices:
 
@@ -21,7 +22,7 @@ This block houses five specialized labs, each with a capacity for 60 host device
 
 
 Administrative Block:-
-======================
+---------------------
 
 This block supports administrative functions with five departments:
 
@@ -29,7 +30,7 @@ This block supports administrative functions with five departments:
 
 
 Server Room Block:-
-===================
+------------------
 
 This block hosts critical servers for network operations:
 
@@ -42,48 +43,91 @@ Network Architecture:-
 
 The network model follows a hierarchical design with three layers:
 
-Core Layer:- Four routers connect the blocks, facilitating high-speed interconnection and routing.
+Core Layer:- 
 ------------
+Four routers connect the blocks, facilitating high-speed interconnection and routing.
 
-Implementation Layer:- Four Layer 3 switches handle intra-block routing and provide efficient communication within each block.
+
+Implementation Layer:- 
 ----------------------
+Four Layer 3 switches handle intra-block routing and provide efficient communication within each block.
 
-Application Layer:- Layer 2 switches and host devices are deployed throughout the campus for local network access.
+
+Application Layer:- 
 -------------------
+Layer 2 switches and host devices are deployed throughout the campus for local network access.
+
+Network Infrastructure :-
+========================
+
+Inter-VLAN Routing:-
+-------------------
+Implemented using switch virtual interfaces (SVIs) for seamless communication between VLANs.
+
+Routing Protocol:-
+------------------
+OSPF deployed for dynamic routing in core and implementation layers, ensuring optimal traffic flow.
+
+Security Measures:-
+------------------
+MD5 authentication, DHCP snooping, SSH protocol, and port security implemented to safeguard network integrity.
+
+Dynamic IP Assignment:-
+-----------------------
+DHCP servers configured in each router to dynamically assign IP addresses to host devices.
+
+Remote Access:-
+---------------
+SSH protocol enabled for secure remote login to L3 switches and routers.
+
+Basic Configuration:-
+--------------------
+Configures passwords for console login and privilege mode access on all devices. Encrypts all passwords stored in the configuration with service password encryption.
 
 
 Network Features:-
 ==================
 
-VLAN Segmentation:- I impleted two separate vlan's for each department for ensures efficient traffic isolation and management.
+VLAN Segmentation:-
 -------------------
+Ensures efficient traffic isolation and management with two separate VLANs for wired and wireless traffic in each department.
 
-VTP Protocol:- I implemented vtp protocol in l-3 and l-2 switch for Centralized VLAN management and simplifying VLAN configuration and propagation.
+VTP Protocol:-
 --------------
+Centralizes VLAN management and simplifies VLAN configuration and propagation.
 
-Inter-VLAN Routing:- I implemented Switch Virtual Interfaces (SVIs) to facilitate communication between VLANs, enhancing network flexibility.
--------------------
+Inter-VLAN Routing:-
+--------------------
+Facilitates communication between VLANs using Switch Virtual Interfaces (SVIs).
 
-Routing Protocol:- I implemented ospf for dynamic routing in the core and implementation layers, ensuring optimal traffic flow.
------------------
+Routing Protocol (OSPF):-
+-------------------------
+Implements OSPF for dynamic routing in the core and implementation layers, ensuring optimal traffic flow.
 
-Authentication:- I implemented MD5 authentication secures routing protocols, mitigating the risk of unauthorized access and spoofing.
+Authentication (MD5):-
+----------------------
+Secures routing protocols, mitigating the risk of unauthorized access and spoofing.
+
+DHCP Services:-
 ---------------
+Configures DHCP servers for network configuration and management.
 
-DHCP Services:- I imlemented dhcp protocol via DHCP servers for network configuration and management.
+DHCP Snooping:-
 ---------------
+Protects against DHCP spoofing, safeguarding network integrity.
 
-DHCP Snooping:- I imlemented DHCP Snooping for Protection against DHCP spoofing, safeguarding network integrity.
----------------
-
-SSH Protocol:- Secure remote access to Layer 3 switches and routers is enabled through SSH, enhancing network security.
+SSH Protocol:-
 --------------
+Enables secure remote access to Layer 3 switches and routers, enhancing network security.
 
-Port Security:- I employ port security mechanisms in l-2 switches to prevent MAC address spoofing and detect rogue devices.
---------------
+Port Security:-
+---------------
+Implements port security mechanisms in Layer 2 switches to prevent MAC address spoofing and detect rogue devices.
 
-Basic Configuration:-
----------------------
 
-Passwords are configured for console login and privilege mode access on all devices.
-Service password encryption is implemented to encrypt all passwords stored in the configuration.
+
+
+
+
+
+
